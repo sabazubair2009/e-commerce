@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../supabaseclient";
+import { supabase } from "../supabaseClient";
 
 function UserPortal({ user, setPage }) {
   const [isSignup, setIsSignup] = useState(false);

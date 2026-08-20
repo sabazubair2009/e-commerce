@@ -7,7 +7,7 @@ import CartPage from "./components/CartPage";
 import WishlistPage from "./components/WishlistPage";
 import UserPortal from "./components/UserPortal";
 
-import { supabase } from "./supabaseclient";
+import { supabase } from "./supabaseClient";
 
 import "./App.css";
 
