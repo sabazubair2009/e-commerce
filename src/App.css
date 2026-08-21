@@ -3,19 +3,35 @@
 ========================================================= */
 
 :root {
-  --dark: #171717;
-  --dark-soft: #292929;
-  --cream: #f7f5f0;
+  --dark: #4a1722;
+  --dark-soft: #682a38;
+
+  --cream: #fff9fa;
   --white: #ffffff;
-  --beige: #e8e1d5;
-  --gold: #a9824d;
-  --gold-light: #c4a36c;
-  --text: #222222;
-  --muted: #777777;
-  --border: #e6e1d9;
-  --danger: #b84c4c;
-  --success: #587a58;
+
+  --beige: #f9e3e7;
+
+  --gold: #b85c70;
+  --gold-light: #d994a3;
+
+  --text: #4b343a;
+  --muted: #8c7077;
+
+  --border: #ebcdd3;
+
+  --danger: #b84f5e;
+  --success: #66856b;
+
+  --blush: #f4cdd4;
+
+  --pink-soft: #fcecef;
+  --pink-medium: #e9b9c3;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
   margin: 0;
@@ -29,8 +45,14 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
   background: var(--cream);
+
   color: var(--text);
 }
 
@@ -55,6 +77,7 @@ img {
 
 .app {
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
 }
@@ -63,6 +86,7 @@ main {
   flex: 1;
 }
 
+
 /* =========================================================
    HEADER
 ========================================================= */
@@ -70,23 +94,34 @@ main {
 .site-header {
   width: 100%;
   min-height: 76px;
+
   padding: 0 7%;
-  background: rgba(255, 255, 255, 0.97);
+
+  background: rgba(255, 249, 250, 0.97);
+
   border-bottom: 1px solid var(--border);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   position: sticky;
   top: 0;
+
   z-index: 1000;
 }
 
 .brand {
   font-size: 28px;
+
   font-weight: 800;
+
   letter-spacing: -1px;
+
   color: var(--dark);
+
   cursor: pointer;
+
   user-select: none;
 }
 
@@ -96,19 +131,29 @@ main {
 
 .navigation {
   display: flex;
+
   align-items: center;
+
   gap: 5px;
 }
 
 .navigation button {
   position: relative;
+
   border: none;
+
   background: transparent;
+
   padding: 10px 14px;
-  color: #444;
+
+  color: #765c63;
+
   font-size: 14px;
+
   font-weight: 500;
-  transition: color 0.2s ease;
+
+  transition:
+    color 0.2s ease;
 }
 
 .navigation button:hover,
@@ -118,28 +163,43 @@ main {
 
 .navigation button.active::after {
   content: "";
+
   position: absolute;
+
   left: 14px;
   right: 14px;
+
   bottom: 3px;
+
   height: 2px;
+
   background: var(--gold);
 }
 
 .cart-count {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
   min-width: 20px;
   height: 20px;
+
   margin-left: 4px;
+
   padding: 0 6px;
+
   border-radius: 50px;
+
   background: var(--dark);
+
   color: white;
+
   font-size: 11px;
+
   font-weight: 700;
 }
+
 
 /* =========================================================
    HERO
@@ -147,66 +207,114 @@ main {
 
 .hero-section {
   min-height: 570px;
+
   padding: 80px 8%;
+
   display: flex;
+
   align-items: center;
-  background:
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-image:
     linear-gradient(
       90deg,
-      rgba(247, 245, 240, 0.97),
-      rgba(247, 245, 240, 0.72)
+      rgba(255, 249, 250, 0.95) 0%,
+      rgba(255, 249, 250, 0.82) 42%,
+      rgba(255, 249, 250, 0.30) 100%
     ),
-    url("./assets/hero.png");
+    url("/images/hero.png");
 
   background-size: cover;
+
   background-position: center;
+
+  background-repeat: no-repeat;
 }
 
 .hero-content {
+  position: relative;
+
+  z-index: 2;
+
   max-width: 620px;
 }
 
 .hero-label {
   display: inline-block;
+
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
+
   color: var(--gold);
 }
 
 .hero-content h1 {
   margin: 18px 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(44px, 6vw, 76px);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      44px,
+      6vw,
+      76px
+    );
+
   line-height: 1.05;
+
   color: var(--dark);
 }
 
 .hero-content p {
   max-width: 520px;
+
   margin-bottom: 30px;
+
   color: var(--muted);
+
   font-size: 17px;
+
   line-height: 1.7;
 }
 
 .hero-button {
   border: none;
-  border-radius: 5px;
+
+  border-radius: 6px;
+
   padding: 14px 25px;
+
   background: var(--dark);
+
   color: white;
+
   font-weight: 600;
 
-  /* transition:
+  transition:
     background 0.2s ease,
-    transform 0.2s ease; */
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .hero-button:hover {
   background: var(--gold);
+
   transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(74, 23, 34, 0.18);
 }
+
 
 /* =========================================================
    PRODUCTS SECTION
@@ -214,13 +322,22 @@ main {
 
 .products-section {
   padding: 90px 7%;
-  background: var(--cream);
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--cream) 0%,
+      var(--pink-soft) 100%
+    );
 }
 
 .section-heading {
   margin-bottom: 42px;
+
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
 
   gap: 30px;
@@ -228,37 +345,61 @@ main {
 
 .section-heading > div > span {
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
+
   color: var(--gold);
 }
 
 .section-heading h2 {
   margin-top: 8px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 42px;
+
   line-height: 1.15;
+
   color: var(--dark);
 }
 
 .section-heading input {
   width: 260px;
+
   padding: 13px 16px;
+
   background: white;
+
   border: 1px solid var(--border);
-  border-radius: 5px;
+
+  border-radius: 6px;
+
   outline: none;
+
   color: var(--text);
-  transition: border-color 0.2s ease;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .section-heading input:focus {
   border-color: var(--gold);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(184, 92, 112, 0.08);
 }
 
 .section-heading input::placeholder {
-  color: #aaa;
+  color: #b7a0a6;
 }
+
 
 /* =========================================================
    PRODUCT GRID
@@ -266,9 +407,13 @@ main {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 28px;
 }
+
 
 /* =========================================================
    PRODUCT CARD
@@ -276,9 +421,15 @@ main {
 
 .product-card {
   min-width: 0;
+
   overflow: hidden;
+
   background: var(--white);
+
   border: 1px solid var(--border);
+
+  border-radius: 8px;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -286,8 +437,12 @@ main {
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 18px 40px
+    rgba(74, 23, 34, 0.12);
 }
+
 
 /* =========================================================
    PRODUCT IMAGE
@@ -295,17 +450,25 @@ main {
 
 .product-image-wrapper {
   position: relative;
+
   width: 100%;
+
   height: 320px;
+
   overflow: hidden;
-  background: #eeeae3;
+
+  background: #fae9ec;
 }
 
 .product-image {
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
-  transition: transform 0.5s ease;
+
+  transition:
+    transform 0.5s ease;
 }
 
 .product-card:hover .product-image {
@@ -314,14 +477,22 @@ main {
 
 .image-not-found {
   width: 100%;
+
   height: 100%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  background: #eeeae3;
-  color: #888;
+
+  background: #fae9ec;
+
+  color: #9b7d85;
+
   font-size: 14px;
 }
+
 
 /* =========================================================
    WISHLIST BUTTON
@@ -329,19 +500,35 @@ main {
 
 .wishlist-button {
   position: absolute;
+
   top: 16px;
+
   right: 16px;
+
   width: 43px;
+
   height: 43px;
+
   border: none;
+
   border-radius: 50%;
+
   background: white;
+
   color: var(--dark);
+
   font-size: 24px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+  box-shadow:
+    0 5px 15px
+    rgba(74, 23, 34, 0.12);
+
   transition:
     color 0.2s ease,
     transform 0.2s ease;
@@ -349,8 +536,10 @@ main {
 
 .wishlist-button:hover {
   color: var(--gold);
+
   transform: scale(1.08);
 }
+
 
 /* =========================================================
    PRODUCT CONTENT
@@ -362,92 +551,139 @@ main {
 
 .product-category {
   display: inline-block;
+
   margin-bottom: 3px;
+
   color: var(--gold);
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 1.5px;
+
   text-transform: uppercase;
 }
 
 .product-content h3 {
   margin: 7px 0 9px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 23px;
+
   line-height: 1.25;
+
   color: var(--dark);
 }
 
 .product-content p {
   min-height: 45px;
+
   margin-bottom: 20px;
+
   color: var(--muted);
+
   font-size: 14px;
+
   line-height: 1.6;
 }
 
 .product-bottom {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 15px;
 }
 
 .product-price {
   color: var(--dark);
+
   font-size: 20px;
+
   font-weight: 700;
+
   white-space: nowrap;
 }
 
+
 /* =========================================================
-   ADD TO CART BUTTON
+   ADD TO CART
 ========================================================= */
 
 .add-cart-button {
   border: none;
+
   border-radius: 5px;
+
   padding: 11px 16px;
+
   background: var(--dark);
+
   color: white;
+
   font-size: 14px;
+
   font-weight: 600;
-  /* 
+
   transition:
     background 0.2s ease,
-    transform 0.2s ease; */
+    transform 0.2s ease;
 }
 
 .add-cart-button:hover {
   background: var(--gold);
+
   transform: translateY(-1px);
 }
 
 .product-message {
   margin-top: 12px;
+
   color: var(--success);
+
   font-size: 13px;
+
   font-weight: 600;
 }
 
+
 /* =========================================================
-   STATUS / LOADING / ERROR
+   STATUS / LOADING
 ========================================================= */
 
 .status-message {
   min-height: 300px;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   text-align: center;
+
   color: var(--muted);
 }
 
 .status-message h3 {
   margin-bottom: 8px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 25px;
+
   color: var(--dark);
 }
 
@@ -457,12 +693,19 @@ main {
 
 .loader {
   width: 38px;
+
   height: 38px;
+
   margin-bottom: 16px;
+
   border: 3px solid var(--border);
+
   border-top-color: var(--gold);
+
   border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+
+  animation:
+    spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -473,38 +716,57 @@ main {
 
 .error-message {
   max-width: 600px;
+
   margin: 50px auto;
+
   padding: 30px;
+
   text-align: center;
+
   background: white;
-  border: 1px solid #ead9c7;
-  border-radius: 5px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
 }
 
 .error-message h3 {
   margin-bottom: 10px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   color: var(--dark);
 }
 
 .error-message p {
   margin-bottom: 20px;
+
   color: var(--muted);
+
   line-height: 1.6;
+
   word-break: break-word;
 }
 
 .retry-button {
   border: none;
+
   border-radius: 5px;
+
   padding: 11px 20px;
+
   background: var(--dark);
+
   color: white;
 }
 
 .retry-button:hover {
   background: var(--gold);
 }
+
 
 /* =========================================================
    PAGE HEADINGS
@@ -516,18 +778,29 @@ main {
 
 .page-heading > span {
   font-size: 12px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
+
   color: var(--gold);
 }
 
 .page-heading h1 {
   margin-top: 8px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 50px;
+
   line-height: 1.1;
+
   color: var(--dark);
 }
+
 
 /* =========================================================
    CART
@@ -535,107 +808,151 @@ main {
 
 .cart-page {
   min-height: 70vh;
+
   padding: 80px 7%;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--cream),
+      var(--pink-soft)
+    );
 }
 
 .cart-layout {
   display: grid;
+
   grid-template-columns:
     minmax(0, 1fr)
     350px;
+
   gap: 35px;
+
   align-items: start;
 }
 
 .cart-item {
   margin-bottom: 15px;
+
   padding: 20px;
+
   display: flex;
+
   align-items: center;
+
   gap: 22px;
+
   background: white;
+
   border: 1px solid var(--border);
+
+  border-radius: 7px;
 }
 
 .cart-item-image {
   width: 120px;
+
   height: 120px;
+
   flex-shrink: 0;
+
   overflow: hidden;
-  background: #eeeae3;
+
+  background: #fae9ec;
+
+  border-radius: 5px;
 }
 
 .cart-item-image img {
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
 }
 
 .cart-item-details {
   flex: 1;
+
   min-width: 0;
 }
 
-.cart-category {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
 .cart-item-details h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 21px;
+
   color: var(--dark);
 }
 
 .cart-item-details p {
   margin: 7px 0;
+
   color: var(--muted);
+
   font-size: 14px;
 }
 
 .cart-actions {
   margin-top: 15px;
+
   display: flex;
+
   align-items: center;
+
   gap: 20px;
 }
 
 .quantity-control {
   display: flex;
+
   align-items: center;
+
   overflow: hidden;
+
   border: 1px solid var(--border);
+
+  border-radius: 4px;
 }
 
 .quantity-control button {
   width: 34px;
+
   height: 34px;
+
   border: none;
+
   background: white;
+
   color: var(--dark);
+
   font-size: 18px;
 }
 
 .quantity-control button:hover {
-  background: var(--cream);
+  background: var(--beige);
 }
 
 .quantity-control span {
   width: 34px;
+
   text-align: center;
+
   font-size: 14px;
 }
 
 .remove-button {
   border: none;
+
   background: transparent;
+
   color: var(--muted);
+
   text-decoration: underline;
+
   font-size: 13px;
 }
 
@@ -645,8 +962,12 @@ main {
 
 .cart-item-total {
   font-weight: 700;
+
+  color: var(--dark);
+
   white-space: nowrap;
 }
+
 
 /* =========================================================
    ORDER SUMMARY
@@ -654,62 +975,104 @@ main {
 
 .order-summary {
   height: fit-content;
+
   padding: 28px;
+
   background: white;
+
   border: 1px solid var(--border);
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 12px 30px
+    rgba(74, 23, 34, 0.06);
 }
 
 .order-summary h2 {
   margin-bottom: 25px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   color: var(--dark);
 }
 
 .summary-row {
   padding: 15px 0;
+
   display: flex;
+
   justify-content: space-between;
+
   border-bottom: 1px solid var(--border);
+
   color: var(--muted);
 }
 
 .total-row {
   color: var(--dark);
+
   font-size: 20px;
+
   font-weight: 700;
+
   border-bottom: none;
 }
 
 .checkout-button {
   width: 100%;
+
   margin-top: 15px;
+
   border: none;
+
   border-radius: 5px;
+
   padding: 14px;
+
   background: var(--dark);
+
   color: white;
+
   font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .checkout-button:hover {
   background: var(--gold);
+
+  transform: translateY(-1px);
 }
 
+
 /* =========================================================
-   EMPTY CART / PRODUCTS / WISHLIST
+   EMPTY CART
 ========================================================= */
 
 .empty-cart,
 .empty-products,
 .empty-wishlist {
   padding: 70px 20px;
+
   text-align: center;
+
   color: var(--muted);
 }
 
 .empty-cart h1 {
   margin: 15px 0;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   color: var(--dark);
 }
 
@@ -721,27 +1084,46 @@ main {
   font-size: 45px;
 }
 
+
 /* =========================================================
    WISHLIST
 ========================================================= */
 
 .wishlist-page {
   min-height: 70vh;
+
   padding: 80px 7%;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--cream),
+      var(--pink-soft)
+    );
 }
 
 .wishlist-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 28px;
 }
 
 .wishlist-card {
   overflow: hidden;
+
   display: flex;
+
   flex-direction: column;
+
   background: white;
+
   border: 1px solid var(--border);
+
+  border-radius: 8px;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -749,87 +1131,154 @@ main {
 
 .wishlist-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+
+  box-shadow:
+    0 15px 35px
+    rgba(74, 23, 34, 0.10);
 }
 
-.wishlist-card > img {
+.wishlist-image-wrapper {
   width: 100%;
+
   height: 280px;
-  object-fit: cover;
-  background: #eeeae3;
+
+  overflow: hidden;
+
+  background: #fae9ec;
 }
 
-.wishlist-card > div {
+.wishlist-image-wrapper img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.wishlist-card-content {
   flex: 1;
+
   padding: 22px;
+
   display: flex;
+
   flex-direction: column;
 }
 
 .wishlist-card span {
   color: var(--gold);
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
 .wishlist-card h3 {
   margin: 8px 0;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 21px;
+
   color: var(--dark);
 }
 
 .wishlist-card p {
   flex: 1;
+
   margin-bottom: 12px;
+
   color: var(--muted);
+
   font-size: 14px;
+
   line-height: 1.5;
 }
 
 .wishlist-card strong {
   display: block;
+
   margin-bottom: 5px;
+
   color: var(--dark);
+
   font-size: 19px;
+}
+
+.wishlist-actions {
+  margin-top: auto;
 }
 
 .wishlist-card .add-cart-button {
   width: 100%;
+
   margin-top: 12px;
 }
 
 .wishlist-card .remove-button {
   width: 100%;
+
   margin-top: 12px;
+
   padding: 10px;
+
   text-align: center;
+}
+
+.wishlist-message {
+  width: 100%;
+
+  margin-bottom: 25px;
+
+  padding: 12px 16px;
+
+  background: var(--beige);
+
+  color: var(--gold);
+
+  border: 1px solid var(--border);
+
+  text-align: center;
+
+  font-size: 14px;
+
+  font-weight: 600;
 }
 
 .empty-wishlist {
   min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.empty-wishlist-icon {
-  margin-bottom: 15px;
-  font-size: 45px;
-  color: var(--gold);
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
 .empty-wishlist h2 {
   margin-bottom: 10px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   color: var(--dark);
 }
 
 .empty-wishlist p {
   margin-bottom: 20px;
 }
+
 
 /* =========================================================
    AUTH / ACCOUNT / PROTECTED
@@ -839,47 +1288,81 @@ main {
 .account-page,
 .auth-page {
   min-height: 75vh;
+
   padding: 80px 7%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  background: var(--cream);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--cream),
+      var(--pink-soft)
+    );
 }
 
 .protected-box,
 .account-box,
 .auth-box {
   width: 100%;
+
   max-width: 500px;
+
   padding: 45px;
+
   text-align: center;
+
   background: white;
+
   border: 1px solid var(--border);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 20px 50px
+    rgba(74, 23, 34, 0.08);
 }
 
 .protected-box > span,
 .account-box > span,
 .auth-box > span {
   display: block;
+
   margin-bottom: 10px;
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
+
   color: var(--gold);
 }
 
 .protected-icon,
 .account-icon {
   width: 70px;
+
   height: 70px;
+
   margin: 0 auto 20px;
+
   border-radius: 50%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  background: #f7f3eb;
+
+  background: var(--beige);
+
   color: var(--gold);
+
   font-size: 35px;
 }
 
@@ -887,8 +1370,14 @@ main {
 .account-box h1,
 .auth-box h1 {
   margin: 15px 0;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 38px;
+
   color: var(--dark);
 }
 
@@ -896,26 +1385,22 @@ main {
 .account-box p,
 .auth-box > p {
   margin-bottom: 25px;
+
   color: var(--muted);
+
   line-height: 1.6;
 }
 
-.dark-button {
-  border: none;
-  border-radius: 5px;
-  padding: 13px 25px;
-  background: var(--dark);
-  color: white;
-  font-weight: 600;
-  /* transition:
-    background 0.2s ease,
-    transform 0.2s ease; */
+.account-email {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--dark);
+
+  word-break: break-word;
 }
 
-.dark-button:hover {
-  background: var(--gold);
-  transform: translateY(-1px);
-}
 
 /* =========================================================
    AUTH FORM
@@ -923,73 +1408,145 @@ main {
 
 .auth-box {
   max-width: 460px;
+
   text-align: left;
+}
+
+.auth-icon {
+  width: 60px;
+
+  height: 60px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--beige);
+
+  color: var(--dark);
+
+  font-weight: 800;
+
+  font-size: 20px;
 }
 
 .auth-box form {
   display: flex;
+
   flex-direction: column;
+
   gap: 9px;
 }
 
 .auth-box label {
   margin-top: 5px;
+
   color: var(--dark);
+
   font-size: 13px;
+
   font-weight: 600;
 }
 
 .auth-box input {
   width: 100%;
+
   padding: 15px 16px;
+
   border: 1px solid var(--border);
+
+  border-radius: 5px;
+
   outline: none;
+
   background: white;
+
   color: var(--text);
-  transition: border-color 0.2s ease;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .auth-box input:focus {
   border-color: var(--gold);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(184, 92, 112, 0.08);
 }
 
 .auth-box input::placeholder {
-  color: #aaa;
+  color: #b7a0a6;
 }
 
 .auth-box button[type="submit"] {
   width: 100%;
+
   margin-top: 12px;
+
   padding: 15px;
+
   border: none;
+
   border-radius: 5px;
+
   background: var(--dark);
+
   color: white;
+
   font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .auth-box button[type="submit"]:hover {
   background: var(--gold);
+
+  transform: translateY(-1px);
 }
 
 .auth-message {
   margin-top: 18px;
+
   padding: 12px;
-  background: #f7f3eb;
+
+  background: var(--beige);
+
   color: var(--gold);
+
+  border: 1px solid var(--border);
+
   font-size: 13px;
+
   line-height: 1.5;
+
   text-align: center;
 }
 
 .switch-auth {
   width: 100%;
+
   margin-top: 20px;
+
   padding: 10px;
+
   border: none;
+
   background: transparent;
+
   color: var(--muted);
+
   text-decoration: underline;
+
   font-size: 13px;
 }
 
@@ -999,17 +1556,30 @@ main {
 
 .logout-button {
   display: block;
+
   margin: 20px auto;
+
   padding: 11px 20px;
+
   background: transparent;
+
   border: 1px solid var(--dark);
+
+  border-radius: 5px;
+
   color: var(--dark);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .logout-button:hover {
   background: var(--dark);
+
   color: white;
 }
+
 
 /* =========================================================
    PASSWORD FIELD
@@ -1017,35 +1587,79 @@ main {
 
 .password-field {
   position: relative;
+
   width: 100%;
 }
 
 .password-field input {
   width: 100%;
+
   padding-right: 50px;
 }
 
 .password-toggle {
   position: absolute;
+
   top: 50%;
+
   right: 12px;
 
   transform: translateY(-50%);
+
   width: 35px;
+
   height: 35px;
+
   border: none;
+
   background: transparent;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   font-size: 18px;
+
   cursor: pointer;
 }
 
 .password-toggle:hover {
-  background: #f7f3eb;
+  background: var(--beige);
+
   border-radius: 50%;
 }
+
+
+/* =========================================================
+   DARK BUTTON
+========================================================= */
+
+.dark-button {
+  border: none;
+
+  border-radius: 5px;
+
+  padding: 13px 25px;
+
+  background: var(--dark);
+
+  color: white;
+
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dark-button:hover {
+  background: var(--gold);
+
+  transform: translateY(-1px);
+}
+
 
 /* =========================================================
    FOOTER
@@ -1053,35 +1667,48 @@ main {
 
 .footer {
   padding: 45px 7%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 30px;
+
   background: var(--dark);
+
   color: white;
 }
 
 .footer-logo {
   font-size: 28px;
+
   font-weight: 800;
 }
 
 .footer p {
   margin-top: 7px;
-  color: #aaa;
+
+  color: #e9ced3;
+
   font-size: 14px;
 }
 
 .footer-links {
   display: flex;
+
   gap: 20px;
-  color: #ccc;
+
+  color: #f2dde1;
+
   font-size: 14px;
 }
 
 .copyright {
   text-align: right;
 }
+
 
 /* =========================================================
    TABLET
@@ -1090,7 +1717,8 @@ main {
 @media (max-width: 1100px) {
   .product-grid,
   .wishlist-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .cart-layout {
@@ -1104,11 +1732,13 @@ main {
   }
 }
 
+
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
+
   /* HEADER */
 
   .site-header {
@@ -1147,6 +1777,7 @@ main {
     right: 9px;
   }
 
+
   /* HERO */
 
   .hero-section {
@@ -1164,6 +1795,7 @@ main {
   .hero-content p {
     font-size: 15px;
   }
+
 
   /* PRODUCTS */
 
@@ -1188,7 +1820,8 @@ main {
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
     gap: 15px;
   }
@@ -1227,6 +1860,7 @@ main {
     font-size: 18px;
   }
 
+
   /* CART */
 
   .cart-page,
@@ -1237,7 +1871,8 @@ main {
   .cart-item {
     display: grid;
 
-    grid-template-columns: 90px 1fr;
+    grid-template-columns:
+      90px 1fr;
 
     gap: 15px;
 
@@ -1272,11 +1907,13 @@ main {
     width: 100%;
   }
 
+
   /* WISHLIST */
 
   .wishlist-grid {
     grid-template-columns: 1fr;
   }
+
 
   /* AUTH */
 
@@ -1298,6 +1935,7 @@ main {
     font-size: 32px;
   }
 
+
   /* FOOTER */
 
   .footer {
@@ -1317,11 +1955,13 @@ main {
   }
 }
 
+
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 480px) {
+
   .navigation button {
     padding: 7px 6px;
 
@@ -1363,7 +2003,8 @@ main {
   }
 
   .cart-item {
-    grid-template-columns: 85px 1fr;
+    grid-template-columns:
+      85px 1fr;
 
     gap: 14px;
   }
